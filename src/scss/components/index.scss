@@ -1,0 +1,18 @@
+@use '../abstracts' as *;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+
+  ::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+body {
+  font-family: $Nunito;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -ms-overflow-style: none;
+}

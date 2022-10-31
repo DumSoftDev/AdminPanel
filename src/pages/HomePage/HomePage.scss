@@ -1,0 +1,148 @@
+@use '../../scss/abstracts' as *;
+
+.main {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: row;
+
+  transition: $transitionsAll;
+
+  .sideContainer {
+    width: 240px;
+    height: 100%;
+
+    @include media('<desktop') {
+      width: 81px;
+    }
+
+    @include media('<fold') {
+      width: 60px;
+    }
+  }
+
+  .mainContainer {
+    width: calc(100% - 240px);
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+
+    .navContainer {
+      width: 100%;
+      max-height: 75px;
+      flex: 1;
+    }
+
+    .content {
+      width: 100%;
+      height: 100%;
+      flex: 12;
+      overflow-y: scroll;
+
+      .widgets {
+        width: 100%;
+        height: 149px;
+        display: flex;
+        flex-wrap: wrap;
+        padding: $generalPadding;
+        gap: 21px;
+
+        @include media('<LGtablet') {
+          height: auto;
+          display: grid;
+          grid-template-columns: 1fr 1fr;
+          gap: 15px;
+        }
+
+        @include media('<phone') {
+          height: auto;
+          display: flex;
+          flex-direction: column;
+          padding: $phonePadding;
+        }
+
+        @include media('<fold') {
+          display: grid;
+          grid-template-rows: 1fr 1fr 1fr 1fr;
+          grid-template-columns: 1fr;
+          gap: 6px;
+          padding: 6px;
+        }
+      }
+
+      .charts {
+        width: 100%;
+        height: 444px;
+        display: flex;
+        flex-direction: row;
+        padding: $generalPadding;
+        gap: 21px;
+
+        @include media('<LGtablet') {
+          height: 360px;
+          gap: 15px;
+        }
+
+        @include media('<tablet') {
+          height: auto;
+          flex-direction: column;
+          gap: 15px;
+        }
+
+        @include media('<phone') {
+          padding: $phonePadding;
+        }
+
+        @include media('<fold') {
+          padding: 6px;
+        }
+      }
+
+      .tableContainer {
+        width: 100%;
+        height: 498px;
+        padding: $generalPadding;
+        margin-bottom: 21px;
+
+        .table {
+          -webkit-box-shadow: $boxShadowDark;
+          box-shadow: $boxShadowClear;
+          border-radius: $borderRadius;
+          padding: 21px;
+          overflow: scroll;
+
+          .tableTitle {
+            font-size: 15px;
+            font-weight: bold;
+            color: $boxTitlesColor;
+          }
+
+          @include media('<phone') {
+            width: 99%;
+
+            .tableTitle {
+              font-size: 12px;
+            }
+          }
+        }
+
+        @include media('<phone') {
+          height: auto;
+          padding: $phonePadding;
+        }
+
+        @include media('<fold') {
+          padding: 6px;
+        }
+      }
+    }
+
+    @include media('<desktop') {
+      width: calc(100% - 81px);
+    }
+
+    @include media('<fold') {
+      width: calc(100% - 60px);
+    }
+  }
+}

@@ -1,0 +1,69 @@
+@use '../../scss/abstracts' as *;
+
+.dataTable {
+  width: 100%;
+  height: auto;
+  -webkit-box-shadow: none !important;
+  box-shadow: none !important;
+
+  .listTable {
+    .cellWrapper {
+      display: flex;
+      align-items: center;
+
+      .img {
+        width: 30px;
+        height: 30px;
+        border-radius: 50%;
+        margin-right: 12px;
+        object-fit: cover;
+      }
+
+      @include media('<tablet') {
+        .img {
+          width: 21px;
+          height: 21px;
+        }
+      }
+    }
+
+    span {
+      font-weight: bold;
+
+      @include media('<phone') {
+       font-size: 9px;
+      }
+    }
+
+    .status {
+      min-width: 60px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 9px;
+      border-radius: 6px;
+
+      &.Aprovado {
+        color: green;
+        background-color: rgba(170, 255, 1);
+      }
+
+      &.Pendiente {
+        color: rgb(139, 64, 1);
+        background-color: rgba(255, 192, 0);
+      }
+
+      @include media('<tablet') {
+        width: 21px;
+        padding: 6px;
+      }
+    }
+
+    @include media('<tablet') {
+      .tableCell {
+        font-size: 9px;
+      }
+    }
+
+  }
+}

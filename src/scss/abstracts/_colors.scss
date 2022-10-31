@@ -1,0 +1,44 @@
+// Primary Colors
+
+$primary: rgb(255, 255, 255);
+$secundary: rgb(6, 40, 62);
+$third: rgb(37, 109, 133);
+$fourth: rgb(71, 181, 255);
+$fifth: rgb(233, 247, 255);
+
+//Typogra
+
+$secundaryHover: rgba(210, 45, 66, 0.1);
+
+// Special Colors
+
+$leadsColor: rgb(251, 107, 37);
+$ordersColor: rgb(116, 81, 248);
+$salesColor: rgb(248, 38, 73);
+$usersColor: rgb(7, 173, 148);
+
+$backgroundIconLeads: linear-gradient(
+  to bottom right,
+  #f1bf64,
+  #f71d36
+);
+$backgroundIconOrders: linear-gradient(
+  to bottom right,
+  rgb(116, 81, 248) 0,
+  rgba(98, 89, 202, 0.6) 100%
+);
+$backgroundIconSales: linear-gradient(
+  to bottom right,
+  #9070ff,
+  #ff5d9e
+);
+$backgroundIconUsers: linear-gradient(
+  to bottom right,
+  rgba(7, 173, 148, 1) 0,
+  rgba(123, 249, 230, 1) 100%
+);
+
+// Shadows
+
+$boxShadowDark: 3px 6px 12px 1px rgba(0, 0, 0, 0.47);
+$boxShadowClear: 3px 6px 12px 1px rgba(201, 201, 201, 1);

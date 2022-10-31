@@ -1,0 +1,50 @@
+@use '../../scss/abstracts' as *;
+
+.listPage {
+    display: flex;
+    width: auto;
+    margin-left: 270px;
+    margin-top: 75px;
+
+    .listContainer {
+        width: 100%;
+
+        .newItem {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin: 9px 60px 0 60px;
+
+            .newButton {
+                min-width: 60px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                font-size: 15px;
+                padding: 9px 12px;
+                border-radius: 6px;
+                color: white;
+                background-color: rgb( 40, 167, 69 );
+                cursor: pointer;
+                -webkit-box-shadow: $boxShadowDark;
+                box-shadow: $boxShadowClear;
+
+                span {
+                    margin: 0 6px;
+                }
+            }
+
+            .title {
+                color: $boxTitlesColor;
+                font-weight: bold;
+                font-size: 39px;
+            }
+        }
+
+        .listDataTableContainer {
+            padding: 21px;
+            gap: 21px;
+        }
+    }
+
+}

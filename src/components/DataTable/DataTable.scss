@@ -1,0 +1,81 @@
+.dataTable {
+    height: auto;
+    padding: 21px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    -webkit-box-shadow: 3px 6px 12px 1px rgba( 0, 0, 0, 0.47 );
+    box-shadow: 3px 6px 12px 1px rgba( 201, 201, 201, 1 );
+    border-radius: 9px;
+
+    .cellWithImg {
+        display: flex;
+        align-items: center;
+
+        .cellImg {
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-right: 21px;
+        }
+    }
+
+    .cellWithStatus {
+        min-width: 60px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 9px;
+        border-radius: 6px;
+
+        &.active {
+            color: green;
+            background-color: rgba( 0, 128, 0, 0.3 );
+        }
+
+        &.passive {
+            color: crimson;
+            background-color: rgba( 255, 0, 0, 0.3 );
+        }
+
+        &.pending {
+            color: goldenrod;
+            background-color: rgba( 189, 189, 3, 0.3 );
+        }
+    }
+
+    .cellAction {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 15px;
+        font-size: 15px;
+        
+        .viewButton {
+            width: 48px;
+            padding: 3px 6px;
+            border-radius: 6px;
+            text-align: center;
+            cursor: pointer;
+            color: darkblue;
+            border: 1px solid rgba( 0, 0, 138, 0.6 )
+        }
+
+        .deleteButton {
+            width: 48px;
+            padding: 3px 6px;
+            border-radius: 6px;
+            text-align: center;
+            cursor: pointer;
+            color: crimson;
+            border: 1px solid rgba(222, 21, 60, 0.6)
+        }
+    }
+
+    .MuiDataGrid-root .MuiDataGrid-columnHeader:focus-within,
+    .MuiDataGrid-root .MuiDataGrid-cell:focus-within {
+        outline: none !important;
+    }
+
+}

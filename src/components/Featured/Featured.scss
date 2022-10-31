@@ -1,0 +1,164 @@
+@use '../../scss/abstracts' as *;
+
+.featured {
+  flex: 1;
+  -webkit-box-shadow: $boxShadowDark;
+  box-shadow: $boxShadowClear;
+  border-radius: $borderRadius;
+  padding: 21px;
+
+  .top {
+    display: flex;
+    justify-content: left;
+
+    .title {
+      font-size: 15px;
+      font-weight: bold;
+      color: $boxTitlesColor;
+    }
+  }
+
+  .bottom {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+    padding: 21px;
+
+    .featuredCircularChart {
+      width: 120px;
+      height: 120px;
+
+      .CircularProgressbar,
+      .CircularProgressbar-path {
+        stroke: $third !important;
+      }
+    }
+
+    .title {
+      font-size: 15px;
+      font-weight: bold;
+      color: $boxTitlesColor;
+    }
+
+    .amount {
+      font-size: 30px;
+    }
+
+    .decription {
+      font-size: 12px;
+      font-weight: normal;
+      color: $boxTitlesColor;
+      text-align: center;
+    }
+
+    .sumary {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+
+      .item {
+        text-align: center;
+      }
+
+      .itemResult {
+        display: flex;
+        align-content: center;
+        justify-content: center;
+        margin: 15px;
+        font-size: 21px;
+
+        &.positive {
+          color: green;
+        }
+
+        &.negative {
+          color: red;
+        }
+      }
+
+      @include media('<fold') {
+        flex-direction: column;
+        justify-content: center;
+      }
+    }
+  }
+
+  @include media('<LGtablet') {
+    flex: 1;
+
+    .top {
+      .title {
+        font-size: 12px;
+      }
+    }
+
+    .bottom {
+      gap: 9px;
+      padding: 12px;
+
+      .featuredCircularChart {
+        width: 90px;
+        height: 90px;
+      }
+
+      .title {
+        font-size: 15px;
+      }
+
+      .amount {
+        font-size: 21px;
+      }
+
+      .decription {
+        font-size: 12px;
+      }
+
+      .sumary {
+        .itemResult {
+          margin: 9px;
+          font-size: 15px;
+        }
+      }
+    }
+  }
+
+  @include media('<tablet') {
+    height: auto;
+  }
+
+  @include media('<phone') {
+
+    padding: 12px;
+
+    .bottom {
+      padding: 0;
+      padding-top: 12px;
+
+      .featuredCircularChart {
+        width: 60px;
+        height: 60px;
+      }
+
+      .title {
+        font-size: 12px;
+      }
+
+      .amount {
+        font-size: 15px;
+      }
+
+      .decription {
+        font-size: 9px;
+      }
+
+      .sumary {
+        .itemResult {
+          margin: 9px;
+          font-size: 12px;
+        }
+      }
+    }
+  }
+}
