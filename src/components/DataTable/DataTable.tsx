@@ -1,3 +1,5 @@
+import React from 'react';
+
 import './DataTable.scss';
 import { DataGrid } from '@mui/x-data-grid';
 import { userColumns, userRows } from '../../dataTableSource';
@@ -18,14 +20,14 @@ const DataTable = () => {
 
     return (
         <div className='dataTable'>
-            <DataGrid
+            {/* <DataGrid
             rows={ userRows }
             columns={ userColumns.concat( actionColumn ) }
             pageSize={ 9 }
             rowsPerPageOptions={ [9] }
             autoHeight={ true }
             checkboxSelection
-            />
+            /> */}
         </div>
     )
 }

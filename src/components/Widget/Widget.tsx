@@ -1,3 +1,5 @@
+import React from 'react';
+
 import {
   AttachMoney,
   KeyboardArrowUp,
@@ -8,11 +10,22 @@ import {
 
 import './Widget.scss';
 
-const Widget = ({ type, value }) => {
-  let data;
-  let amount;
+type Props = {
+  type: string;
+  value: string;
+};
 
-  const diff = 3;
+type Data = {
+  title: string;
+  isMoney: boolean;
+  icon: any;
+};
+
+const Widget = ({ type, value }: Props) => {
+  let data!: Data;
+  let amount: string;
+
+  const diff: number = 3;
 
   const options = {
     minimumFractionDigits: 2,

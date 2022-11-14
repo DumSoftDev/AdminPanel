@@ -1,4 +1,6 @@
+import React, { useContext } from 'react';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import { ThemeContext } from './context/ThemeContext';
 
 import './scss/components/App.scss';
 
@@ -9,8 +11,10 @@ import NewPage from './pages/NewPage/NewPage';
 import SinglePage from './pages/SinglePage/SinglePage';
 
 function App() {
+  const { theme } = useContext(ThemeContext);
+
   return (
-    <div className="App">
+    <div className={`App ${theme}`}>
       <BrowserRouter>
         <Routes>
           <Route path="/">
@@ -26,11 +30,11 @@ function App() {
               <Route path="new" element={<NewPage />} />
             </Route>
 
-            <Route path="products">
+            {/* <Route path="products">
               <Route index element={<ListPage />} />
               <Route path=":productId" element={<SinglePage />} />
               <Route path="new" element={<NewPage />} />
-            </Route>
+            </Route> */}
           </Route>
         </Routes>
       </BrowserRouter>

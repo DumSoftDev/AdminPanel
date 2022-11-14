@@ -1,3 +1,5 @@
+import React from 'react';
+
 import './Featured.scss';
 import {
   KeyboardArrowDown,
@@ -36,12 +38,12 @@ const Featured = () => {
           {amount && '$ '}
           {amount}
         </p>
-        <p className="decription">
+        <p className="description">
           Últimas ordenes procesadas.
           <br /> Pueden haber ordenes aún en proceso.
         </p>
 
-        <div className="sumary">
+        <div className="summary">
           <div className="item">
             <div className="title">Total Semana</div>
             <div className="itemResult negative">

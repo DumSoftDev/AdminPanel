@@ -1,3 +1,6 @@
+import React, { useContext } from 'react';
+import { ThemeContext } from '../../context/ThemeContext';
+
 import './HomePage.scss';
 
 import Chart from '../../components/Chart/Chart';
@@ -8,8 +11,9 @@ import ListTable from '../../components/ListTable/ListTable';
 import Widget from '../../components/Widget/Widget';
 
 const HomePage = () => {
+  const { theme } = useContext(ThemeContext)
   return (
-    <div className="main">
+    <div className={`main ${theme}`}>
       <div className="sideContainer">
         <SideBar />
       </div>

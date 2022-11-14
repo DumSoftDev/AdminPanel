@@ -14,7 +14,7 @@
     .title {
       font-size: 15px;
       font-weight: bold;
-      color: $boxTitlesColor;
+      color: $typography-secondary;
     }
   }
 
@@ -39,21 +39,21 @@
     .title {
       font-size: 15px;
       font-weight: bold;
-      color: $boxTitlesColor;
+      color: $typography-secondary;
     }
 
     .amount {
       font-size: 30px;
     }
 
-    .decription {
+    .description {
       font-size: 12px;
       font-weight: normal;
-      color: $boxTitlesColor;
+      color: $typography-secondary;
       text-align: center;
     }
 
-    .sumary {
+    .summary {
       display: flex;
       align-items: center;
       justify-content: space-between;
@@ -111,11 +111,11 @@
         font-size: 21px;
       }
 
-      .decription {
+      .description {
         font-size: 12px;
       }
 
-      .sumary {
+      .summary {
         .itemResult {
           margin: 9px;
           font-size: 15px;
@@ -129,7 +129,6 @@
   }
 
   @include media('<phone') {
-
     padding: 12px;
 
     .bottom {
@@ -149,11 +148,11 @@
         font-size: 15px;
       }
 
-      .decription {
+      .description {
         font-size: 9px;
       }
 
-      .sumary {
+      .summary {
         .itemResult {
           margin: 9px;
           font-size: 12px;

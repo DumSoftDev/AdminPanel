@@ -1,3 +1,5 @@
+import React from 'react';
+
 import { useState } from 'react';
 import { links } from '../../dataTableSource';
 import './SideBar.scss';
@@ -5,7 +7,7 @@ import './SideBar.scss';
 const SideBard = () => {
   const [selected, setSelected] = useState('Dashboard');
 
-  const handledSelected = (item) => {
+  const handledSelected = (item: string) => {
     setSelected(item);
     console.log(item);
   };

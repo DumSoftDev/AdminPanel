@@ -84,14 +84,16 @@
           display: flex;
           align-items: center;
           font-size: 21px;
-          color: $boxTitlesColor;
+          background-color: transparent;
+          color: $typography-secondary;
         }
 
         span {
           font-size: 15px;
           margin-left: 9px;
           font-weight: 600;
-          color: $boxTitlesColor;
+          background-color: transparent;
+          color: $typography-secondary;
 
           @include media('<desktop') {
             display: none;

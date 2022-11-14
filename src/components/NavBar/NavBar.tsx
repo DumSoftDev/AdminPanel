@@ -1,3 +1,5 @@
+import React, { useContext } from 'react';
+
 import {
   Chat,
   DarkMode,
@@ -6,21 +8,34 @@ import {
   Language,
   Menu,
   NotificationsNone,
+  WbSunny,
 } from '@mui/icons-material';
 
+import { ThemeContext } from '../../context/ThemeContext';
 import './NavBar.scss';
 
 const NavBar = () => {
+  const { theme, setTheme } = useContext(ThemeContext);
+
   return (
-    <div className="navbar">
+    <div className={`navbar ${theme}`}>
       <div className="wrapper">
         <div className="menuControl">
           <Menu className="icon" />
         </div>
 
         <div className="items">
-          <div className="item">
-            <DarkMode className="icon" />
+          <div
+            className="item"
+            onClick={() =>
+              setTheme(theme === 'light' ? 'dark' : 'light')
+            }
+          >
+            {theme === 'light' ? (
+              <DarkMode className="icon" />
+            ) : (
+              <WbSunny className="icon" />
+            )}
           </div>
           <div className="item">
             <FullscreenExit className="icon" />

@@ -1,4 +1,8 @@
+import React, { useContext }  from 'react';
+import { ThemeContext } from '../../context/ThemeContext';
+
 import './SinglePage.scss';
+
 import EditIcon from '@mui/icons-material/Edit';
 import NavBar from '../../components/NavBar/NavBar';
 import Orders from '../../components/Orders/Orders';
@@ -6,19 +10,29 @@ import Products from '../../components/Products/Products';
 import SideBard from '../../components/SideBar/SideBard';
 import Users from '../../components/Users/Users';
 
+type Props = {
+  type: string;
+};
 
-const SinglePage = ({ type }) => {
+type Data = {
+  title: string;
+  button: string;
+  page: any;
+};
 
-  let data;
+const SinglePage = ({ type }: Props) => {
+  const { theme } = useContext(ThemeContext);
 
-  switch ( type ) {
+  let data!: Data;
+
+  switch (type) {
     case 'users':
       data = {
         title: 'Perfil de Usuario',
         button: 'Usuario',
         page: <Users />,
       };
-        break;
+      break;
 
     case 'products':
       data = {
@@ -26,7 +40,7 @@ const SinglePage = ({ type }) => {
         button: 'Producto',
         page: <Products />,
       };
-        break;
+      break;
 
     case 'orders':
       data = {
@@ -34,36 +48,31 @@ const SinglePage = ({ type }) => {
         button: 'Orden',
         page: <Orders />,
       };
-        break;
+      break;
 
-      default:
-        break;
+    default:
+      break;
   }
 
   return (
-    <div className='singlePage'>
-
+    <div className={`singlePage ${theme}`}>
       <SideBard />
 
       <div className="singleContainer">
         <NavBar />
 
         <div className="editItem">
-          <h1 className="title">{ data.title }</h1>
+          <h1 className="title">{data.title}</h1>
           <div className="editButton">
-            <EditIcon className='icon' />
-            <span>{ `Editar ${ data.button }`}</span>
+            <EditIcon className="icon" />
+            <span>{`Editar ${data.button}`}</span>
           </div>
         </div>
 
-        <div className="dataContainer">
-          { data.page }
-        </div>
-
+        <div className="dataContainer">{data.page}</div>
       </div>
-
     </div>
   );
-}
+};
 
 export default SinglePage;

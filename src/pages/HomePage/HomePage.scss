@@ -72,7 +72,7 @@
 
       .charts {
         width: 100%;
-        height: 444px;
+        height: 462px;
         display: flex;
         flex-direction: row;
         padding: $generalPadding;
@@ -114,7 +114,7 @@
           .tableTitle {
             font-size: 15px;
             font-weight: bold;
-            color: $boxTitlesColor;
+            color: $typography-secondary;
           }
 
           @include media('<phone') {

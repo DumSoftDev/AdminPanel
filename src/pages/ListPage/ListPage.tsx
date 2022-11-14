@@ -1,4 +1,6 @@
+import React from 'react';
 import './ListPage.scss';
+
 import AddIcon from '@mui/icons-material/Add';
 import DataTable from '../../components/DataTable/DataTable';
 import NavBar from '../../components/NavBar/NavBar';

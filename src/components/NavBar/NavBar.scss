@@ -4,11 +4,11 @@
   width: 100%;
   height: 75px;
   padding-right: 15px;
-  background: rgba(255, 255, 255, 0.81);
+  // background: rgba(255, 255, 255, 0.81);
   backdrop-filter: blur(6px);
   border-bottom: 0.9px solid rgb(212, 212, 212);
   font-style: 15px;
-  color: $boxTitlesColor;
+  color: $typography-secondary;
   z-index: 99;
 
   transition: $transitionsAll;

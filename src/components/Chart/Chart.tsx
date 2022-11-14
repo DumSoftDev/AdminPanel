@@ -1,4 +1,5 @@
-import './Chart.scss';
+import React, { useContext } from 'react';
+import { ThemeContext } from '../../context/ThemeContext';
 import {
   AreaChart,
   Area,
@@ -8,6 +9,8 @@ import {
   Tooltip,
   ResponsiveContainer,
 } from 'recharts';
+
+import './Chart.scss';
 
 const data = [
   { name: 'Ene', total: 15520 },
@@ -25,8 +28,10 @@ const data = [
 ];
 
 const Chart = () => {
+  const { theme } = useContext(ThemeContext);
+
   return (
-    <div className="chart">
+    <div className={`chart ${theme}`}>
       <div className="top">
         <h3 className="title">Últimos 12 meses</h3>
       </div>
