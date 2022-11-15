@@ -2,13 +2,13 @@ import React, { useContext } from 'react';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import { ThemeContext } from './context/ThemeContext';
 
-import './scss/components/App.scss';
-
 import HomePage from './pages/HomePage/HomePage';
 import ListPage from './pages/ListPage/ListPage';
 import LoginPage from './pages/LoginPage/LoginPage';
 import NewPage from './pages/NewPage/NewPage';
 import SinglePage from './pages/SinglePage/SinglePage';
+
+import './scss/components/App.scss';
 
 function App() {
   const { theme } = useContext(ThemeContext);

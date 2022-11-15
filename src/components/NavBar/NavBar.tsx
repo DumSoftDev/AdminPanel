@@ -1,5 +1,4 @@
 import React, { useContext } from 'react';
-
 import {
   Chat,
   DarkMode,
@@ -10,8 +9,8 @@ import {
   NotificationsNone,
   WbSunny,
 } from '@mui/icons-material';
-
 import { ThemeContext } from '../../context/ThemeContext';
+
 import './NavBar.scss';
 
 const NavBar = () => {
@@ -21,7 +20,7 @@ const NavBar = () => {
     <div className={`navbar ${theme}`}>
       <div className="wrapper">
         <div className="menuControl">
-          <Menu className="icon" />
+          <Menu className="icon hover" />
         </div>
 
         <div className="items">
@@ -54,7 +53,7 @@ const NavBar = () => {
           <div className="item">
             <Language className="icon" />
           </div>
-          <div className="item">
+          <div className="item avatar">
             <img
               src="https://petapixel.com/assets/uploads/2019/02/download-4.jpeg"
               alt=""

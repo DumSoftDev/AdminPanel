@@ -19,7 +19,6 @@
     .title {
       font-size: 15px;
       font-weight: bold;
-      color: $typography-secondary;
     }
   }
 
@@ -53,6 +52,22 @@
 
     .chartContainer {
       height: 288px;
+    }
+  }
+
+  &.dark {
+    .top {
+      .title {
+        color: $dark-typography-secondary;
+      }
+    }
+  }
+
+  &.light {
+    .top {
+      .title {
+        color: $typography-secondary;
+      }
     }
   }
 }

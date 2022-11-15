@@ -17,33 +17,33 @@
     height: 100%;
     flex: 1;
     display: flex;
-    border-radius: $borderRadius;
     flex-direction: row;
+    padding: 6px;
+    border-radius: $borderRadius;
     justify-content: space-between;
     align-items: center;
 
     .left {
       width: 100%;
       height: 100%;
-      flex: 3;
+      flex: 2;
       display: flex;
       border-radius: $borderRadius;
-      padding: 21px;
+      padding: 21px 0px 21px 21px;
       flex-direction: column;
       justify-content: space-between;
 
       .counter {
-        color: $typography-primary;
         font-size: $boxTitles;
         font-weight: bold;
       }
 
       .icon {
         font-size: 12px;
-        color: white;
         padding: 1px;
         border-radius: 50%;
         margin-right: 3px;
+        color: $white;
 
         &.leads {
           background-color: $leadsColor;
@@ -68,13 +68,13 @@
         align-items: center;
         font-size: 15px;
 
-        &.positive {
-          color: green;
-        }
+        // &.positive {
+        //   color: green;
+        // }
 
-        &.negative {
-          color: red;
-        }
+        // &.negative {
+        //   color: red;
+        // }
 
         span {
           display: inline;
@@ -83,7 +83,6 @@
         .percentageText {
           min-width: 120px;
           font-size: 15px;
-          color: $typography-secondary;
 
           @include media('<LGdesktop') {
             min-width: 90px;
@@ -132,7 +131,6 @@
       .title {
         font-size: 15px;
         font-weight: bold;
-        color: $typography-secondary;
 
         @include media('<LGdesktop') {
           font-size: 12px;
@@ -153,7 +151,6 @@
       flex: 1;
       align-items: center;
       justify-content: center;
-      padding-right: 15px;
 
       .icon__widget {
         font-size: 75px;
@@ -188,6 +185,84 @@
 
       @include media('<fold') {
         padding-right: 3px;
+      }
+    }
+  }
+
+  &.dark {
+    .box__widget {
+      .left {
+        .counter {
+          color: $dark-typography-primary;
+        }
+
+        .icon {
+          &.leads {
+            background-color: $dark-leadsColor;
+          }
+
+          &.orders {
+            background-color: $dark-ordersColor;
+          }
+
+          &.sales {
+            background-color: $dark-salesColor;
+          }
+
+          &.users {
+            background-color: $dark-usersColor;
+          }
+        }
+
+        .percentage {
+          .percentageText {
+            color: $dark-typography-primary;
+          }
+
+          .percentageValue {
+            &.leads {
+              color: $dark-leadsColor;
+            }
+
+            &.orders {
+              color: $dark-ordersColor;
+            }
+
+            &.sales {
+              color: $dark-salesColor;
+            }
+
+            &.users {
+              color: $dark-usersColor;
+            }
+          }
+        }
+
+        .title {
+          color: $dark-typography-primary;
+        }
+      }
+    }
+  }
+
+  &.light {
+    .box__widget {
+      .left {
+        color: $typography-secondary;
+
+        .counter {
+          color: $typography-primary;
+        }
+
+        .percentage {
+          .percentageText {
+            color: $typography-primary;
+          }
+        }
+
+        .title {
+          color: $typography-primary;
+        }
       }
     }
   }

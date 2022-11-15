@@ -54,18 +54,9 @@
         transition: all 0.2s ease-in-out;
 
         &:hover {
-          background-color: $fifth;
           border-top-right-radius: 24px;
           border-bottom-right-radius: 24px;
           margin-right: 6px;
-
-          .icon {
-            color: $third;
-          }
-
-          span {
-            color: $third;
-          }
 
           @include media('<desktop') {
             justify-content: center;
@@ -85,7 +76,6 @@
           align-items: center;
           font-size: 21px;
           background-color: transparent;
-          color: $typography-secondary;
         }
 
         span {
@@ -93,7 +83,6 @@
           margin-left: 9px;
           font-weight: 600;
           background-color: transparent;
-          color: $typography-secondary;
 
           @include media('<desktop') {
             display: none;
@@ -145,6 +134,62 @@
 
     @include media('<fold') {
       height: 100%;
+    }
+  }
+
+  &.dark {
+    .center {
+      ul {
+        li {
+          &:hover {
+            background-color: $dark-fifth;
+
+            .icon {
+              color: $dark-third;
+            }
+
+            span {
+              color: $dark-third;
+            }
+          }
+
+          .icon {
+            color: $dark-typography-secondary;
+          }
+
+          span {
+            color: $dark-typography-secondary;
+          }
+        }
+      }
+    }
+  }
+
+  &.light {
+    .center {
+      ul {
+        li {
+          &:hover {
+            background-color: $fifth;
+
+            .icon {
+              color: $third;
+            }
+
+            span {
+              color: $third;
+            }
+          }
+
+          .icon {
+            color: $typography-secondary;
+          }
+
+          span {
+            color: $typography-secondary;
+          }
+        }
+      }
     }
   }
 }

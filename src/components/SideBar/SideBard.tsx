@@ -1,10 +1,14 @@
-import React from 'react';
-
+import React, { useContext } from 'react';
 import { useState } from 'react';
+import { ThemeContext } from '../../context/ThemeContext';
+
 import { links } from '../../dataTableSource';
+
 import './SideBar.scss';
 
 const SideBard = () => {
+  const { theme } = useContext(ThemeContext);
+
   const [selected, setSelected] = useState('Dashboard');
 
   const handledSelected = (item: string) => {
@@ -13,7 +17,7 @@ const SideBard = () => {
   };
 
   return (
-    <div className="sidebar">
+    <div className={`sidebar ${theme}`}>
       <div className="logo">
         <span>Pida Express</span>
       </div>

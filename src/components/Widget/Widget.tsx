@@ -1,5 +1,4 @@
-import React from 'react';
-
+import React, { useContext } from 'react';
 import {
   AttachMoney,
   KeyboardArrowUp,
@@ -7,6 +6,7 @@ import {
   RocketLaunch,
   TrendingUp,
 } from '@mui/icons-material';
+import { ThemeContext } from '../../context/ThemeContext';
 
 import './Widget.scss';
 
@@ -22,6 +22,8 @@ type Data = {
 };
 
 const Widget = ({ type, value }: Props) => {
+  const { theme } = useContext(ThemeContext);
+
   let data!: Data;
   let amount: string;
 
@@ -74,7 +76,7 @@ const Widget = ({ type, value }: Props) => {
   }
 
   return (
-    <div className="widget">
+    <div className={`widget ${theme}`}>
       <div className="box__widget">
         <div className="left">
           <span className="title">{data.title}</span>

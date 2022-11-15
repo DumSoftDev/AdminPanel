@@ -1,99 +1,23 @@
 @use './colors' as *;
 
-.dark {
-  // Shadows
+// Typography Colors
 
-  $boxShadowDark: 3px 6px 12px 1px rgba(0, 0, 0, 0.47);
-  $boxShadowClear: 3px 6px 12px 1px rgba(201, 201, 201, 1);
+$dark-typography-primary: $white;
+$dark-typography-secondary: $dark-100;
+$dark-typography-third: $dark-600;
 
-  // Special Colors
+// Used Colors
 
-  $leadsColor: $orange-900;
-  $ordersColor: $violet-900;
-  $salesColor: $red-900;
-  $usersColor: $cyan-500;
+$dark-primary: $dark-600;
+$dark-secondary: $indigo-900;
+$dark-third: $indigo-300;
+$dark-fourth: $indigo-300;
+$dark-fifth: $indigo-300;
 
-  $backgroundIconLeads: linear-gradient(
-    to bottom right,
-    $orange-900 0,
-    $orange-300 100%
-  );
-  $backgroundIconOrders: linear-gradient(
-    to bottom right,
-    $violet-900 0,
-    $violet-300 100%
-  );
-  $backgroundIconSales: linear-gradient(
-    to bottom right,
-    $red-900 0,
-    $red-300 100%
-  );
-  $backgroundIconUsers: linear-gradient(
-    to bottom right,
-    $cyan-700 0,
-    $cyan-300 100%
-  );
 
-  // Typography Colors
+// Special Colors
 
-  $typography-primary: $black;
-  $typography-secondary: $dark-300;
-  $typography-third: $dark-600;
-
-  // Used Colors
-
-  $primary: $dark-600;
-  $secondary: $indigo-900;
-  $third: $indigo-700;
-  $fourth: $indigo-300;
-  $fifth: $indigo-000;
-}
-
-.light {
-  // Shadows
-
-  $boxShadowDark: 3px 6px 12px 1px rgba(0, 0, 0, 0.47);
-  $boxShadowClear: 3px 6px 12px 1px rgba(201, 201, 201, 1);
-
-  // Special Colors
-
-  $leadsColor: $orange-900;
-  $ordersColor: $violet-900;
-  $salesColor: $red-900;
-  $usersColor: $cyan-500;
-
-  $backgroundIconLeads: linear-gradient(
-    to bottom right,
-    $orange-900 0,
-    $orange-300 100%
-  );
-  $backgroundIconOrders: linear-gradient(
-    to bottom right,
-    $violet-900 0,
-    $violet-300 100%
-  );
-  $backgroundIconSales: linear-gradient(
-    to bottom right,
-    $red-900 0,
-    $red-300 100%
-  );
-  $backgroundIconUsers: linear-gradient(
-    to bottom right,
-    $cyan-700 0,
-    $cyan-300 100%
-  );
-
-  // Typography Colors
-
-  $typography-primary: $black;
-  $typography-secondary: $dark-300;
-  $typography-third: $dark-600;
-
-  // Used Colors
-
-  $primary: $white;
-  $secondary: $indigo-900;
-  $third: $indigo-700;
-  $fourth: $indigo-300;
-  $fifth: $indigo-000;
-}
+$dark-leadsColor: $orange-900;
+$dark-ordersColor: $violet-300;
+$dark-salesColor: $red-900;
+$dark-usersColor: $cyan-500;

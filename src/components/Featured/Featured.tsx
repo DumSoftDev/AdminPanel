@@ -1,14 +1,17 @@
-import React from 'react';
-
+import React, { useContext } from 'react';
 import './Featured.scss';
 import {
   KeyboardArrowDown,
   KeyboardArrowUp,
 } from '@mui/icons-material';
 import { CircularProgressbar } from 'react-circular-progressbar';
+import { ThemeContext } from '../../context/ThemeContext';
+
 import 'react-circular-progressbar/dist/styles.css';
 
 const Featured = () => {
+  const { theme } = useContext(ThemeContext);
+
   const value = 1500;
 
   const options = {
@@ -19,7 +22,7 @@ const Featured = () => {
   const amount = Number(value).toLocaleString('en', options);
 
   return (
-    <div className="featured">
+    <div className={`featured ${theme}`}>
       <div className="top">
         <h3 className="title">Comparativo Ventas</h3>
       </div>

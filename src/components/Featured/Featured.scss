@@ -2,6 +2,7 @@
 
 .featured {
   flex: 1;
+  min-width: 390px;
   -webkit-box-shadow: $boxShadowDark;
   box-shadow: $boxShadowClear;
   border-radius: $borderRadius;
@@ -14,7 +15,6 @@
     .title {
       font-size: 15px;
       font-weight: bold;
-      color: $typography-secondary;
     }
   }
 
@@ -29,17 +29,11 @@
     .featuredCircularChart {
       width: 120px;
       height: 120px;
-
-      .CircularProgressbar,
-      .CircularProgressbar-path {
-        stroke: $third !important;
-      }
     }
 
     .title {
       font-size: 15px;
       font-weight: bold;
-      color: $typography-secondary;
     }
 
     .amount {
@@ -49,7 +43,6 @@
     .description {
       font-size: 12px;
       font-weight: normal;
-      color: $typography-secondary;
       text-align: center;
     }
 
@@ -68,7 +61,77 @@
         justify-content: center;
         margin: 15px;
         font-size: 21px;
+      }
 
+      @include media('<fold') {
+        flex-direction: column;
+        justify-content: center;
+      }
+    }
+  }
+
+  &.dark {
+    .top {
+      .title {
+        color: $dark-typography-secondary;
+      }
+    }
+
+    .bottom {
+      .featuredCircularChart {
+        .CircularProgressbar,
+        .CircularProgressbar-path {
+          stroke: $dark-third !important;
+        }
+      }
+
+      .title {
+        color: $dark-typography-secondary;
+      }
+
+      .amount {
+        color: $dark-typography-primary;
+        font-weight: bold;
+      }
+
+      .description {
+        color: $dark-typography-secondary;
+      }
+
+      .summary {
+        .item {
+          .title {
+            color: $dark-typography-primary;
+          }
+        }
+      }
+    }
+  }
+
+  &.light {
+    .top {
+      .title {
+        color: $typography-secondary;
+      }
+    }
+
+    .bottom {
+      .featuredCircularChart {
+        .CircularProgressbar,
+        .CircularProgressbar-path {
+          stroke: $third !important;
+        }
+      }
+
+      .title {
+        color: $typography-secondary;
+      }
+
+      .description {
+        color: $typography-secondary;
+      }
+
+      .summary {
         &.positive {
           color: green;
         }
@@ -76,11 +139,6 @@
         &.negative {
           color: red;
         }
-      }
-
-      @include media('<fold') {
-        flex-direction: column;
-        justify-content: center;
       }
     }
   }

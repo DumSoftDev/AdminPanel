@@ -1,5 +1,4 @@
 import React, { useContext } from 'react';
-import { ThemeContext } from '../../context/ThemeContext';
 import {
   AreaChart,
   Area,
@@ -9,6 +8,7 @@ import {
   Tooltip,
   ResponsiveContainer,
 } from 'recharts';
+import { ThemeContext } from '../../context/ThemeContext';
 
 import './Chart.scss';
 
@@ -55,8 +55,11 @@ const Chart = () => {
                 />
               </linearGradient>
             </defs>
-            <XAxis dataKey="name" stroke="grey" />
-            <YAxis stroke="grey" />
+            <XAxis
+              dataKey="name"
+              stroke={theme === 'light' ? 'grey' : '#c1c2c5'}
+            />
+            <YAxis stroke={theme === 'light' ? 'grey' : '#c1c2c5'} />
             <CartesianGrid strokeDasharray="3 3" />
             <Tooltip />
             <Area

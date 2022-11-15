@@ -2,13 +2,11 @@
 
 .navbar {
   width: 100%;
-  height: 75px;
+  height: 100%;
   padding-right: 15px;
-  // background: rgba(255, 255, 255, 0.81);
   backdrop-filter: blur(6px);
   border-bottom: 0.9px solid rgb(212, 212, 212);
   font-style: 15px;
-  color: $typography-secondary;
   z-index: 99;
 
   transition: $transitionsAll;
@@ -21,7 +19,10 @@
     justify-content: right;
 
     .menuControl {
+      width: 45px;
+      height: 45px;
       display: flex;
+      justify-content: center;
       align-items: center;
       position: absolute;
       left: 27px;
@@ -32,17 +33,12 @@
 
         &:hover {
           font-size: 36px;
-          margin-left: -8px;
           padding: 6px;
+          margin-left: -8px;
           border: 0.9px solid rgb(212, 212, 212);
           border-radius: 50%;
-          -webkit-box-shadow: $boxShadowDark;
-          box-shadow: $boxShadowClear;
-        }
-
-        &:active {
-          background-color: $fifth;
-          color: $third;
+          -webkit-box-shadow: $iconShadowDark;
+          box-shadow: $iconShadowClear;
         }
 
         @include media('<desktop') {
@@ -62,67 +58,62 @@
         border-radius: 50%;
 
         &:hover {
-          -webkit-box-shadow: $boxShadowDark;
-          box-shadow: $boxShadowClear;
+          cursor: pointer;
         }
-      }
-
-      .counter {
-        width: 15px;
-        height: 15px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        background-color: red;
-        color: white;
-        font-size: 9px;
-        font-weight: bold;
-        border-radius: 50%;
-        position: absolute;
-        bottom: -3px;
-        right: -6px;
       }
 
       .item {
+        width: 45px;
+        height: 45px;
         display: flex;
         align-items: center;
         justify-content: center;
-        margin: 0 12px;
         position: relative;
-      }
 
-      .icon {
-        font-size: 21px;
-        cursor: pointer;
-        margin-left: 1px;
-
-        &:hover {
-          font-size: 36px;
-          margin-right: -8px;
-          margin-left: -6px;
-          padding: 6px;
-          border: 0.9px solid rgb(212, 212, 212);
+        .counter {
+          width: 15px;
+          height: 15px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          background-color: red;
+          color: white;
+          font-size: 9px;
+          font-weight: bold;
           border-radius: 50%;
-          -webkit-box-shadow: $boxShadowDark;
-          box-shadow: $boxShadowClear;
+          position: absolute;
+          bottom: 11px;
+          right: 5px;
         }
 
-        &:active {
-          background-color: $fifth;
-          color: $third;
-        }
-
-        @include media('<phone') {
-          font-size: 18px;
-          margin-left: 0;
-        }
-
-        @include media('<fold') {
-          font-size: 12px;
+        .icon {
+          font-size: 21px;
+          cursor: pointer;
+          margin-left: 1px;
 
           &:hover {
-            font-size: 21px;
-            padding: 3px;
+            font-size: 36px;
+            margin-right: -8px;
+            margin-left: -6px;
+            padding: 6px;
+            border: 0.9px solid rgb(212, 212, 212);
+            border-radius: 50%;
+            -webkit-box-shadow: $iconShadowDark;
+            box-shadow: $iconShadowClear;
+          }
+
+          @include media('<phone') {
+            font-size: 18px;
+            margin-left: 0;
+          }
+
+          @include media('<fold') {
+            font-size: 12px;
+
+            &:hover {
+              font-size: 21px;
+              padding: 3px;
+            }
           }
         }
       }
@@ -156,6 +147,54 @@
         .counter {
           width: 9px;
           height: 9px;
+        }
+      }
+    }
+  }
+
+  &.dark {
+    color: $white;
+
+    .wrapper {
+      .menuControl {
+        .icon {
+          &:active {
+            background-color: $dark-fifth;
+            color: $dark-third;
+          }
+        }
+      }
+
+      .items {
+        .icon {
+          &:active {
+            background-color: $dark-fifth;
+            color: $dark-third;
+          }
+        }
+      }
+    }
+  }
+
+  &.light {
+    color: $typography-secondary;
+
+    .wrapper {
+      .menuControl {
+        .icon {
+          &:active {
+            background-color: $fifth;
+            color: $third;
+          }
+        }
+      }
+
+      .items {
+        .icon {
+          &:active {
+            background-color: $fifth;
+            color: $third;
+          }
         }
       }
     }

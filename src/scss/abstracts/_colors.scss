@@ -157,3 +157,52 @@ $orange-700: #f76707;
 $orange-800: #e8590c;
 $orange-900: #d9480f;
 
+// Shadows
+
+$boxShadowDark: 3px 6px 12px 1px rgba(0, 0, 0, 0.47);
+$boxShadowClear: 3px 6px 12px 1px rgba(201, 201, 201, 1);
+
+$iconShadowDark: 1px 1px 2px 1px rgba(0, 0, 0, 0.47);
+$iconShadowClear: 1px 1px 2px 1px rgba(201, 201, 201, 1);
+
+// Special Colors
+
+$leadsColor: $orange-900;
+$ordersColor: $violet-900;
+$salesColor: $red-900;
+$usersColor: $cyan-500;
+
+$backgroundIconLeads: linear-gradient(
+  to bottom right,
+  $orange-900 0,
+  $orange-300 100%
+);
+$backgroundIconOrders: linear-gradient(
+  to bottom right,
+  $violet-900 0,
+  $violet-300 100%
+);
+$backgroundIconSales: linear-gradient(
+  to bottom right,
+  $red-900 0,
+  $red-300 100%
+);
+$backgroundIconUsers: linear-gradient(
+  to bottom right,
+  $cyan-700 0,
+  $cyan-300 100%
+);
+
+// Typography Colors
+
+$typography-primary: $black;
+$typography-secondary: $dark-300;
+$typography-third: $dark-600;
+
+// Used Colors
+
+$primary: $white;
+$secondary: $indigo-900;
+$third: $indigo-900;
+$fourth: $indigo-300;
+$fifth: $indigo-000;

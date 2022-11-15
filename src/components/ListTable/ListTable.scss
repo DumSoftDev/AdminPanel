@@ -28,12 +28,7 @@
     }
 
     .tableHead {
-      color: $typography-third;
       font-weight: bold;
-    }
-
-    .tableCell {
-      color: $typography-primary;
     }
 
     span {
@@ -75,4 +70,25 @@
       }
     }
   }
+
+  &.dark {
+    .tableHead {
+      color: $dark-third;
+    }
+
+    .tableCell {
+      color: $dark-typography-primary;
+    }
+
+  }
+
+  &.light {
+    .tableHead {
+      color: $typography-third;
+    }
+
+    .tableCell {
+      color: $typography-primary;
+    }
+  }  
 }

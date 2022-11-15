@@ -1,8 +1,6 @@
 import React, { useContext } from 'react';
 import { ThemeContext } from '../../context/ThemeContext';
 
-import './HomePage.scss';
-
 import Chart from '../../components/Chart/Chart';
 import Featured from '../../components/Featured/Featured';
 import NavBar from '../../components/NavBar/NavBar';
@@ -10,8 +8,12 @@ import SideBar from '../../components/SideBar/SideBard';
 import ListTable from '../../components/ListTable/ListTable';
 import Widget from '../../components/Widget/Widget';
 
+import './HomePage.scss';
+import Footer from '../../components/Footer/Footer';
+
 const HomePage = () => {
-  const { theme } = useContext(ThemeContext)
+  const { theme } = useContext(ThemeContext);
+  
   return (
     <div className={`main ${theme}`}>
       <div className="sideContainer">
@@ -41,6 +43,9 @@ const HomePage = () => {
               <div className="tableTitle">Últimas Transacciones</div>
               <ListTable />
             </div>
+          </div>
+          <div className="footer">
+            <Footer />
           </div>
         </div>
       </div>
