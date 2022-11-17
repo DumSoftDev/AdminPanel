@@ -65,9 +65,7 @@
     }
 
     @include media('<tablet') {
-      .tableCell {
-        font-size: 9px;
-      }
+      font-size: 9px;
     }
   }
 
@@ -79,7 +77,6 @@
     .tableCell {
       color: $dark-typography-primary;
     }
-
   }
 
   &.light {
@@ -90,5 +87,5 @@
     .tableCell {
       color: $typography-primary;
     }
-  }  
+  }
 }

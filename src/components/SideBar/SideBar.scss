@@ -16,7 +16,6 @@
     span {
       font-size: 27px;
       font-weight: 800;
-      color: $third;
 
       @include media('<desktop') {
         display: none;
@@ -138,6 +137,12 @@
   }
 
   &.dark {
+    .logo {
+      span {
+        color: $dark-third;
+      }
+    }
+
     .center {
       ul {
         li {
@@ -166,6 +171,12 @@
   }
 
   &.light {
+    .logo {
+      span {
+        color: $third;
+      }
+    }
+
     .center {
       ul {
         li {

@@ -20,7 +20,7 @@ const NavBar = () => {
     <div className={`navbar ${theme}`}>
       <div className="wrapper">
         <div className="menuControl">
-          <Menu className="icon hover" />
+          <Menu className="icon" />
         </div>
 
         <div className="items">
@@ -37,18 +37,12 @@ const NavBar = () => {
             )}
           </div>
           <div className="item">
-            <FullscreenExit className="icon" />
-          </div>
-          <div className="item">
             <NotificationsNone className="icon" />
             <div className="counter">1</div>
           </div>
           <div className="item">
             <Chat className="icon" />
             <div className="counter">2</div>
-          </div>
-          <div className="item">
-            <FormatListBulleted className="icon" />
           </div>
           <div className="item">
             <Language className="icon" />

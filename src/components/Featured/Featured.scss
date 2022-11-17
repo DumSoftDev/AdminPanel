@@ -53,14 +53,22 @@
 
       .item {
         text-align: center;
-      }
 
-      .itemResult {
-        display: flex;
-        align-content: center;
-        justify-content: center;
-        margin: 15px;
-        font-size: 21px;
+        .itemResult {
+          display: flex;
+          align-content: center;
+          justify-content: center;
+          margin: 15px;
+          font-size: 21px;
+
+          &.positive {
+            color: green;
+          }
+
+          &.negative {
+            color: red;
+          }
+        }
       }
 
       @include media('<fold') {
@@ -132,12 +140,16 @@
       }
 
       .summary {
-        &.positive {
-          color: green;
-        }
+        .item {
+          .itemResult {
+            &.positive {
+              color: green;
+            }
 
-        &.negative {
-          color: red;
+            &.negative {
+              color: red;
+            }
+          }
         }
       }
     }
@@ -187,6 +199,7 @@
   }
 
   @include media('<phone') {
+    min-width: auto;
     padding: 12px;
 
     .bottom {
