@@ -68,14 +68,6 @@
         align-items: center;
         font-size: 15px;
 
-        // &.positive {
-        //   color: green;
-        // }
-
-        // &.negative {
-        //   color: red;
-        // }
-
         span {
           display: inline;
         }
@@ -83,19 +75,6 @@
         .percentageText {
           min-width: 120px;
           font-size: 15px;
-
-          @include media('<LGdesktop') {
-            min-width: 90px;
-            font-size: 12px;
-          }
-
-          @include media('<tablet') {
-            min-width: 60px;
-          }
-
-          @include media('<fold') {
-            min-width: 42px;
-          }
         }
 
         .percentageValue {
@@ -117,32 +96,12 @@
           &.users {
             color: $usersColor;
           }
-
-          @include media('<LGdesktop') {
-            font-size: 12px;
-          }
-        }
-
-        @include media('<LGdesktop') {
-          font-size: 12px;
         }
       }
 
       .title {
         font-size: 15px;
         font-weight: bold;
-
-        @include media('<LGdesktop') {
-          font-size: 12px;
-        }
-      }
-
-      @include media('<tablet') {
-        flex: 2;
-      }
-
-      @include media('<fold') {
-        padding: 12px;
       }
     }
 
@@ -173,21 +132,11 @@
         &.users {
           background: $backgroundIconUsers;
         }
-
-        @include media('<LGdesktop') {
-          font-size: 60px;
-        }
-
-        @include media('<fold') {
-          font-size: 45px;
-        }
-      }
-
-      @include media('<fold') {
-        padding-right: 3px;
       }
     }
   }
+
+  // Dark Mode
 
   &.dark {
     .box__widget {
@@ -267,7 +216,75 @@
     }
   }
 
-  @include media('<fold') {
+  // Media Query's
+
+  @include media('<LGtablet') {
+    .box__widget {
+      .left {
+        .percentage {
+          font-size: 12px;
+
+          .percentageText {
+            min-width: 90px;
+            font-size: 12px;
+          }
+
+          .percentageValue {
+            font-size: 12px;
+          }
+        }
+
+        .title {
+          font-size: 12px;
+        }
+      }
+
+      .right {
+        .icon__widget {
+          font-size: 60px;
+        }
+      }
+    }
+  }
+
+  @include media('<tablet') {
     min-width: 188px;
+
+    .box__widget {
+      .left {
+        flex: 2;
+
+        .percentage {
+          .percentageText {
+            min-width: 60px;
+          }
+        }
+      }
+    }
+  }
+
+  @include media('<phone') {
+  }
+
+  @include media('<fold') {
+    .box__widget {
+      .left {
+        padding: 12px;
+
+        .percentage {
+          .percentageText {
+            min-width: 42px;
+          }
+        }
+      }
+
+      .right {
+        padding-right: 3px;
+
+        .icon__widget {
+          font-size: 45px;
+        }
+      }
+    }
   }
 }

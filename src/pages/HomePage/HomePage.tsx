@@ -13,14 +13,16 @@ import Footer from '../../components/Footer/Footer';
 
 const HomePage = () => {
   const { theme } = useContext(ThemeContext);
+
+  const sideMenu = "";
   
   return (
-    <div className={`main ${theme}`}>
-      <div className="sideContainer">
+    <div className={`main ${ sideMenu } ${theme} `}>
+      <div className="sideContainer" >
         <SideBar />
       </div>
 
-      <div className="mainContainer">
+      <div className="mainContainer" >
         <div className="navContainer">
           <NavBar />
         </div>

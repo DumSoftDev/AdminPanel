@@ -29,6 +29,26 @@
     height: calc(100% - 30px);
   }
 
+  // Dark Mode
+
+  &.dark {
+    .top {
+      .title {
+        color: $dark-typography-secondary;
+      }
+    }
+  }
+
+  &.light {
+    .top {
+      .title {
+        color: $typography-secondary;
+      }
+    }
+  }
+
+  // Media Query's
+
   @include media('<LGtablet') {
     flex: 1;
 
@@ -52,22 +72,6 @@
 
     .chartContainer {
       height: 288px;
-    }
-  }
-
-  &.dark {
-    .top {
-      .title {
-        color: $dark-typography-secondary;
-      }
-    }
-  }
-
-  &.light {
-    .top {
-      .title {
-        color: $typography-secondary;
-      }
     }
   }
 }

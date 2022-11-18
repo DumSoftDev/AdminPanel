@@ -12,14 +12,17 @@
     font-size: 12px;
   }
 
+  // Dark Mode
+
   &.dark {
     color: $dark-typography-secondary;
-
   }
 
   &.light {
     color: $typography-secondary;
   }
+
+  // Media Query's
 
   @include media('<phone') {
     font-size: 9px;

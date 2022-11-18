@@ -12,12 +12,8 @@
     width: 240px;
     height: 100%;
 
-    @include media('<desktop') {
+    &.hide {
       width: 81px;
-    }
-
-    @include media('<fold') {
-      width: 60px;
     }
   }
 
@@ -35,6 +31,7 @@
     .content {
       width: 100%;
       height: calc(100% - 81px);
+      max-height: calc(100% - 81px);
       overflow-y: scroll;
 
       .widgets {
@@ -44,28 +41,6 @@
         flex-wrap: wrap;
         padding: $generalPadding;
         gap: 21px;
-
-        @include media('<LGtablet') {
-          height: auto;
-          display: grid;
-          grid-template-columns: 1fr 1fr;
-          gap: 15px;
-        }
-
-        @include media('<phone') {
-          height: auto;
-          display: flex;
-          flex-direction: column;
-          padding: $phonePadding;
-        }
-
-        @include media('<fold') {
-          display: grid;
-          grid-template-rows: 1fr 1fr 1fr 1fr;
-          grid-template-columns: 1fr;
-          gap: 6px;
-          padding: 6px;
-        }
       }
 
       .charts {
@@ -75,25 +50,6 @@
         flex-direction: row;
         padding: $generalPadding;
         gap: 21px;
-
-        @include media('<LGtablet') {
-          height: 360px;
-          gap: 15px;
-        }
-
-        @include media('<tablet') {
-          height: auto;
-          flex-direction: column;
-          gap: 15px;
-        }
-
-        @include media('<phone') {
-          padding: $phonePadding;
-        }
-
-        @include media('<fold') {
-          padding: 6px;
-        }
       }
 
       .tableContainer {
@@ -114,23 +70,6 @@
             font-weight: bold;
             color: $typography-secondary;
           }
-
-          @include media('<phone') {
-            width: 99%;
-
-            .tableTitle {
-              font-size: 12px;
-            }
-          }
-        }
-
-        @include media('<phone') {
-          height: auto;
-          padding: $phonePadding;
-        }
-
-        @include media('<fold') {
-          padding: 6px;
         }
       }
     }
@@ -139,13 +78,119 @@
       width: 100%;
       height: 60px;
     }
+  }
 
-    @include media('<desktop') {
-      width: calc(100% - 81px);
+  // Hide SideBar
+
+  &.hide {
+    .sideContainer {
+      width: 81px;
     }
 
-    @include media('<fold') {
+    .mainContainer {
+      width: calc(100% - 81px);
+    }
+  }
+
+  // Media Query's
+
+  @include media('<desktop') {
+    .sideContainer {
+      width: 210px;
+    }
+
+    .mainContainer {
+      width: calc(100% - 210px);
+    }
+  }
+
+  @include media('<LGtablet') {
+    .mainContainer {
+      .content {
+        .widgets {
+          height: auto;
+          display: grid;
+          grid-template-columns: 1fr 1fr;
+          gap: 15px;
+        }
+
+        .charts {
+          height: 360px;
+          gap: 15px;
+        }
+      }
+    }
+  }
+
+  @include media('<tablet') {
+    .mainContainer {
+      .content {
+        .charts {
+          height: auto;
+          flex-direction: column;
+          gap: 15px;
+        }
+      }
+    }
+  }
+
+  @include media('<phone') {
+    .sideContainer {
+      width: 81px;
+    }
+
+    .mainContainer {
+      width: calc(100% - 81px);
+
+      .content {
+        .widgets {
+          height: auto;
+          display: flex;
+          flex-direction: column;
+          padding: $phonePadding;
+        }
+
+        .charts {
+          padding: $phonePadding;
+        }
+
+        .tableContainer {
+          .table {
+            width: 99%;
+          }
+        }
+
+        height: auto;
+        padding: $phonePadding;
+      }
+    }
+  }
+
+  @include media('<fold') {
+    .sideContainer {
+      width: 60px;
+    }
+
+    .mainContainer {
       width: calc(100% - 60px);
+
+      .content {
+        .widgets {
+          display: grid;
+          grid-template-rows: 1fr 1fr 1fr 1fr;
+          grid-template-columns: 1fr;
+          gap: 6px;
+          padding: 6px;
+        }
+
+        .charts {
+          padding: 6px;
+        }
+
+        .tableContainer {
+          padding: 6px;
+        }
+      }
     }
   }
 }

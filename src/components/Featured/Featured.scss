@@ -78,6 +78,8 @@
     }
   }
 
+  // Dark Mode
+
   &.dark {
     .top {
       .title {
@@ -155,6 +157,8 @@
     }
   }
 
+  // Media Query's
+
   @include media('<LGtablet') {
     flex: 1;
 
@@ -228,6 +232,15 @@
           margin: 9px;
           font-size: 12px;
         }
+      }
+    }
+  }
+
+  @include media('<fold') {
+    .bottom {
+      .summary {
+        flex-direction: column;
+        justify-content: center;
       }
     }
   }

@@ -18,13 +18,6 @@
         margin-right: 12px;
         object-fit: cover;
       }
-
-      @include media('<tablet') {
-        .img {
-          width: 21px;
-          height: 21px;
-        }
-      }
     }
 
     .tableHead {
@@ -33,10 +26,6 @@
 
     span {
       font-weight: bold;
-
-      @include media('<phone') {
-        font-size: 9px;
-      }
     }
 
     .status {
@@ -57,17 +46,10 @@
         color: rgb(139, 64, 1);
         background-color: rgba(255, 192, 0);
       }
-
-      @include media('<tablet') {
-        width: 21px;
-        padding: 6px;
-      }
-    }
-
-    @include media('<tablet') {
-      font-size: 9px;
     }
   }
+
+  // Dark Mode
 
   &.dark {
     .tableHead {
@@ -86,6 +68,40 @@
 
     .tableCell {
       color: $typography-primary;
+    }
+  }
+
+  // Media Query's
+
+  @include media('<tablet') {
+    .listTable {
+      font-size: 9px;
+
+      .cellWrapper {
+        .img {
+          width: 21px;
+          height: 21px;
+        }
+      }
+
+      span {
+        font-size: 9px;
+      }
+
+      .status {
+        width: 21px;
+        padding: 6px;
+      }
+    }
+  }
+
+  @include media('<phone') {
+    .listTable {
+      .cellWrapper {
+        .img {
+          display: hidden;
+        }
+      }
     }
   }
 }

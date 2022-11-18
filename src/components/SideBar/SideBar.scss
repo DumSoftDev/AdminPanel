@@ -16,10 +16,6 @@
     span {
       font-size: 27px;
       font-weight: 800;
-
-      @include media('<desktop') {
-        display: none;
-      }
     }
   }
 
@@ -39,10 +35,6 @@
         margin-bottom: 6px;
         padding-left: 1rem;
         color: $fourth;
-
-        @include media('<desktop') {
-          display: none;
-        }
       }
 
       li {
@@ -56,13 +48,6 @@
           border-top-right-radius: 24px;
           border-bottom-right-radius: 24px;
           margin-right: 6px;
-
-          @include media('<desktop') {
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-            transition: $transitionsAll;
-          }
         }
 
         &:active {
@@ -82,16 +67,6 @@
           margin-left: 9px;
           font-weight: 600;
           background-color: transparent;
-
-          @include media('<desktop') {
-            display: none;
-            transition: $transitionsAll;
-          }
-        }
-
-        @include media('<desktop') {
-          justify-content: center;
-          padding: 9px 18px;
         }
       }
 
@@ -113,28 +88,11 @@
         span {
           color: white !important;
         }
-
-        @include media('<desktop') {
-          border-top-right-radius: 18px;
-          border-bottom-right-radius: 18px;
-          transition: $transitionsAll;
-        }
       }
     }
-
-    @include media('<desktop') {
-      height: 81%;
-      overflow-y: scroll;
-    }
-
-    @include media('<phone') {
-      height: 72%;
-    }
-
-    @include media('<fold') {
-      height: 100%;
-    }
   }
+
+  // Dark Mode
 
   &.dark {
     .logo {
@@ -201,6 +159,100 @@
           }
         }
       }
+    }
+  }
+
+  // Hide SideBar
+
+  &.hide {
+    .logo {
+      span {
+        display: none;
+      }
+    }
+
+    .center {
+      height: 72%;
+      overflow-y: scroll;
+
+      ul {
+        .title {
+          display: none;
+        }
+
+        li {
+          justify-content: center;
+          padding: 9px 18px;
+
+          &:hover {
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            transition: $transitionsAll;
+          }
+
+          span {
+            display: none;
+            transition: $transitionsAll;
+          }
+        }
+
+        .select {
+          border-top-right-radius: 18px;
+          border-bottom-right-radius: 18px;
+          transition: $transitionsAll;
+        }
+      }
+    }
+  }
+
+  // Media Query's
+
+  @include media('<phone') {
+    .logo {
+      span {
+        display: none;
+      }
+    }
+
+    .center {
+      height: 72%;
+      overflow-y: scroll;
+
+      ul {
+        .title {
+          display: none;
+        }
+
+        li {
+          justify-content: center;
+          padding: 9px 18px;
+
+          &:hover {
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            transition: $transitionsAll;
+          }
+
+          span {
+            display: none;
+            transition: $transitionsAll;
+          }
+        }
+
+        .select {
+          border-top-right-radius: 18px;
+          border-bottom-right-radius: 18px;
+          transition: $transitionsAll;
+        }
+      }
+    }
+  }
+
+  @include media('<fold') {
+    .center {
+      height: 100%;
     }
   }
 }
