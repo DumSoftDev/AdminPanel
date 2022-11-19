@@ -1,20 +1,9 @@
-import React, { useContext } from 'react';
-import {
-  Chat,
-  DarkMode,
-  FormatListBulleted,
-  FullscreenExit,
-  Language,
-  Menu,
-  NotificationsNone,
-  WbSunny,
-} from '@mui/icons-material';
-import { ThemeContext } from '../../context/ThemeContext';
+import { useSelector } from 'react-redux';
 
 import './Footer.scss';
 
 const Footer = () => {
-  const { theme, setTheme } = useContext(ThemeContext);
+  const { theme } = useSelector((state: any) => state.theme);
 
   return (
     <div className={`footer ${theme}`}>

@@ -1,28 +1,27 @@
-import React, { useContext } from 'react';
-import { ThemeContext } from '../../context/ThemeContext';
+import { useSelector } from 'react-redux';
 
 import Chart from '../../components/Chart/Chart';
 import Featured from '../../components/Featured/Featured';
+import Footer from '../../components/Footer/Footer';
 import NavBar from '../../components/NavBar/NavBar';
 import SideBar from '../../components/SideBar/SideBard';
 import ListTable from '../../components/ListTable/ListTable';
 import Widget from '../../components/Widget/Widget';
 
 import './HomePage.scss';
-import Footer from '../../components/Footer/Footer';
 
 const HomePage = () => {
-  const { theme } = useContext(ThemeContext);
+  const { theme } = useSelector((state: any) => state.theme);
 
-  const sideMenu = "";
-  
+  const { barShow } = useSelector((state: any) => state.sideBar);
+
   return (
-    <div className={`main ${ sideMenu } ${theme} `}>
-      <div className="sideContainer" >
+    <div className={`main ${barShow} ${theme} `}>
+      <div className="sideContainer">
         <SideBar />
       </div>
 
-      <div className="mainContainer" >
+      <div className="mainContainer">
         <div className="navContainer">
           <NavBar />
         </div>

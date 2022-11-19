@@ -1,23 +1,22 @@
-import React, { useContext } from 'react';
 import { useState } from 'react';
-import { ThemeContext } from '../../context/ThemeContext';
+import { useSelector } from 'react-redux';
 
 import { links } from '../../dataTableSource';
 
 import './SideBar.scss';
 
 const SideBard = () => {
-  const { theme } = useContext(ThemeContext);
+  const { theme } = useSelector((state: any) => state.theme);
+  const { barShow } = useSelector((state: any) => state.sideBar);
 
   const [selected, setSelected] = useState('Dashboard');
 
   const handledSelected = (item: string) => {
     setSelected(item);
-    console.log(item);
   };
 
   return (
-    <div className={`sidebar ${theme}`}>
+    <div className={`sidebar ${barShow} ${theme}`}>
       <div className="logo">
         <span>Pida Express</span>
       </div>

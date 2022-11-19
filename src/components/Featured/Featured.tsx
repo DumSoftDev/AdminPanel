@@ -1,16 +1,15 @@
-import React, { useContext } from 'react';
-import './Featured.scss';
+import { useSelector } from 'react-redux';
 import {
   KeyboardArrowDown,
   KeyboardArrowUp,
 } from '@mui/icons-material';
 import { CircularProgressbar } from 'react-circular-progressbar';
-import { ThemeContext } from '../../context/ThemeContext';
 
 import 'react-circular-progressbar/dist/styles.css';
+import './Featured.scss';
 
 const Featured = () => {
-  const { theme } = useContext(ThemeContext);
+  const { theme } = useSelector((state: any) => state.theme);
 
   const value = 1500;
 

@@ -1,5 +1,3 @@
-import React from 'react';
-
 import './DataTable.scss';
 import { DataGrid } from '@mui/x-data-grid';
 import { userColumns, userRows } from '../../dataTableSource';

@@ -1,25 +1,37 @@
-import React, { useContext } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
 import {
   Chat,
   DarkMode,
-  FormatListBulleted,
-  FullscreenExit,
+  // FormatListBulleted,
+  // FullscreenExit,
   Language,
   Menu,
   NotificationsNone,
   WbSunny,
 } from '@mui/icons-material';
-import { ThemeContext } from '../../context/ThemeContext';
+
+import { sideBarMode } from '../../store/slices/sideBarSlice';
+import { themeMode } from '../../store/slices/themeSlice';
 
 import './NavBar.scss';
 
 const NavBar = () => {
-  const { theme, setTheme } = useContext(ThemeContext);
+  const dispatch = useDispatch();
+
+  const { theme } = useSelector((state: any) => state.theme);
+  const { barShow } = useSelector((state: any) => state.sideBar);
 
   return (
     <div className={`navbar ${theme}`}>
       <div className="wrapper">
-        <div className="menuControl">
+        <div
+          className="menuControl"
+          onClick={() =>
+            dispatch(
+              sideBarMode(`${barShow === 'show' ? 'hide' : 'show'}`),
+            )
+          }
+        >
           <Menu className="icon" />
         </div>
 
@@ -27,7 +39,9 @@ const NavBar = () => {
           <div
             className="item"
             onClick={() =>
-              setTheme(theme === 'light' ? 'dark' : 'light')
+              dispatch(
+                themeMode(`${theme === 'light' ? 'dark' : 'light'}`),
+              )
             }
           >
             {theme === 'light' ? (

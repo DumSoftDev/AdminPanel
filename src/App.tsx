@@ -1,6 +1,5 @@
-import React, { useContext } from 'react';
+import { useSelector } from 'react-redux';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
-import { ThemeContext } from './context/ThemeContext';
 
 import HomePage from './pages/HomePage/HomePage';
 import ListPage from './pages/ListPage/ListPage';
@@ -11,7 +10,7 @@ import SinglePage from './pages/SinglePage/SinglePage';
 import './scss/components/App.scss';
 
 function App() {
-  const { theme } = useContext(ThemeContext);
+  const { theme } = useSelector((state: any) => state.theme);
 
   return (
     <div className={`App ${theme}`}>

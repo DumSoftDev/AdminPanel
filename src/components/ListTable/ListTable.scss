@@ -7,44 +7,46 @@
   box-shadow: none !important;
 
   .listTable {
-    .cellWrapper {
-      display: flex;
-      align-items: center;
-
-      .img {
-        width: 30px;
-        height: 30px;
-        border-radius: 50%;
-        margin-right: 12px;
-        object-fit: cover;
-      }
-    }
-
     .tableHead {
       font-weight: bold;
     }
 
-    span {
-      font-weight: bold;
-    }
+    .tableCell {
+      .cellWrapper {
+        display: flex;
+        align-items: center;
 
-    .status {
-      min-width: 60px;
-      max-width: 120px;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      padding: 9px;
-      border-radius: 6px;
-
-      &.Aprovado {
-        color: green;
-        background-color: rgba(170, 255, 1);
+        .img {
+          width: 30px;
+          height: 30px;
+          border-radius: 50%;
+          margin-right: 12px;
+          object-fit: cover;
+        }
       }
 
-      &.Pendiente {
-        color: rgb(139, 64, 1);
-        background-color: rgba(255, 192, 0);
+      .status {
+        min-width: 60px;
+        max-width: 120px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 9px;
+        border-radius: 6px;
+
+        &.Aprovado {
+          color: green;
+          background-color: rgba(170, 255, 1);
+        }
+
+        &.Pendiente {
+          color: rgb(139, 64, 1);
+          background-color: rgba(255, 192, 0);
+        }
+      }
+
+      span {
+        font-weight: bold;
       }
     }
   }
@@ -74,23 +76,25 @@
   // Media Query's
 
   @include media('<tablet') {
-    .listTable {
+    .tableHead {
       font-size: 9px;
+    }
 
-      .cellWrapper {
-        .img {
-          width: 21px;
-          height: 21px;
-        }
-      }
-
-      span {
+    .listTable {
+      .tableCell {
         font-size: 9px;
-      }
 
-      .status {
-        width: 21px;
-        padding: 6px;
+        .cellWrapper {
+          .img {
+            width: 21px;
+            height: 21px;
+          }
+        }
+
+        .status {
+          width: 21px;
+          padding: 6px;
+        }
       }
     }
   }
@@ -99,7 +103,7 @@
     .listTable {
       .cellWrapper {
         .img {
-          display: hidden;
+          display: none;
         }
       }
     }

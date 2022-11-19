@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import { useSelector } from 'react-redux';
 import {
   AreaChart,
   Area,
@@ -8,7 +8,6 @@ import {
   Tooltip,
   ResponsiveContainer,
 } from 'recharts';
-import { ThemeContext } from '../../context/ThemeContext';
 
 import './Chart.scss';
 
@@ -28,7 +27,7 @@ const data = [
 ];
 
 const Chart = () => {
-  const { theme } = useContext(ThemeContext);
+  const { theme } = useSelector((state: any) => state.theme);
 
   return (
     <div className={`chart ${theme}`}>

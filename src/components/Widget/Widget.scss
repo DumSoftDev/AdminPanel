@@ -263,17 +263,28 @@
     }
   }
 
-  @include media('<phone') {
-  }
-
   @include media('<fold') {
     .box__widget {
       .left {
         padding: 12px;
 
+        .title {
+          font-size: 9px;
+        }
+
+        .counter {
+          font-size: 21px;
+        }
+
         .percentage {
+          
           .percentageText {
             min-width: 42px;
+            font-size: 9px;
+
+            .percentageValue {
+              font-size: 9px;
+            }
           }
         }
       }

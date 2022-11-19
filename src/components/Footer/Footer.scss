@@ -24,7 +24,17 @@
 
   // Media Query's
 
+  @include media('<tablet') {
+    font-size: 12px;
+    p {
+      font-size: 9px;
+    }
+  }
+
   @include media('<phone') {
     font-size: 9px;
+    p {
+      font-size: 6px;
+    }
   }
 }

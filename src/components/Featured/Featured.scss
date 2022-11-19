@@ -2,7 +2,7 @@
 
 .featured {
   flex: 1;
-  min-width: 390px;
+  min-width: 375px;
   -webkit-box-shadow: $boxShadowDark;
   box-shadow: $boxShadowClear;
   border-radius: $borderRadius;
@@ -160,8 +160,6 @@
   // Media Query's
 
   @include media('<LGtablet') {
-    flex: 1;
-
     .top {
       .title {
         font-size: 12px;
@@ -173,26 +171,26 @@
       padding: 12px;
 
       .featuredCircularChart {
-        width: 90px;
-        height: 90px;
+        width: 75px;
+        height: 75px;
       }
 
       .title {
-        font-size: 15px;
+        font-size: 12px;
       }
 
       .amount {
-        font-size: 21px;
+        font-size: 15px;
       }
 
       .description {
-        font-size: 12px;
+        font-size: 9px;
       }
 
       .summary {
         .itemResult {
-          margin: 9px;
-          font-size: 15px;
+          margin: 6px;
+          font-size: 12px;
         }
       }
     }

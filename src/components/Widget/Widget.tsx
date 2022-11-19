@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import { useSelector } from 'react-redux';
 import {
   AttachMoney,
   KeyboardArrowUp,
@@ -6,7 +6,6 @@ import {
   RocketLaunch,
   TrendingUp,
 } from '@mui/icons-material';
-import { ThemeContext } from '../../context/ThemeContext';
 
 import './Widget.scss';
 
@@ -22,7 +21,7 @@ type Data = {
 };
 
 const Widget = ({ type, value }: Props) => {
-  const { theme } = useContext(ThemeContext);
+  const { theme } = useSelector((state: any) => state.theme);
 
   let data!: Data;
   let amount: string;
