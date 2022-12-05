@@ -1,0 +1,245 @@
+@use '../../../styles/abstracts' as *;
+
+.featured {
+  flex: 1;
+  min-width: 375px;
+  -webkit-box-shadow: $boxShadowDark;
+  box-shadow: $boxShadowClear;
+  border-radius: $borderRadius;
+  padding: 21px;
+
+  .top {
+    display: flex;
+    justify-content: left;
+
+    .title {
+      font-size: 15px;
+      font-weight: bold;
+    }
+  }
+
+  .bottom {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+    padding: 21px;
+
+    .featuredCircularChart {
+      width: 120px;
+      height: 120px;
+    }
+
+    .title {
+      font-size: 15px;
+      font-weight: bold;
+    }
+
+    .amount {
+      font-size: 30px;
+    }
+
+    .description {
+      font-size: 12px;
+      font-weight: normal;
+      text-align: center;
+    }
+
+    .summary {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+
+      .item {
+        text-align: center;
+
+        .itemResult {
+          display: flex;
+          align-content: center;
+          justify-content: center;
+          margin: 15px;
+          font-size: 21px;
+
+          &.positive {
+            color: green;
+          }
+
+          &.negative {
+            color: red;
+          }
+        }
+      }
+
+      @include media('<fold') {
+        flex-direction: column;
+        justify-content: center;
+      }
+    }
+  }
+
+  // Dark Mode
+
+  &.dark {
+    .top {
+      .title {
+        color: $dark-typography-secondary;
+      }
+    }
+
+    .bottom {
+      .featuredCircularChart {
+        .CircularProgressbar,
+        .CircularProgressbar-path {
+          stroke: $dark-third !important;
+        }
+      }
+
+      .title {
+        color: $dark-typography-secondary;
+      }
+
+      .amount {
+        color: $dark-typography-primary;
+        font-weight: bold;
+      }
+
+      .description {
+        color: $dark-typography-secondary;
+      }
+
+      .summary {
+        .item {
+          .title {
+            color: $dark-typography-primary;
+          }
+        }
+      }
+    }
+  }
+
+  &.light {
+    .top {
+      .title {
+        color: $typography-secondary;
+      }
+    }
+
+    .bottom {
+      .featuredCircularChart {
+        .CircularProgressbar,
+        .CircularProgressbar-path {
+          stroke: $third !important;
+        }
+      }
+
+      .title {
+        color: $typography-secondary;
+      }
+
+      .description {
+        color: $typography-secondary;
+      }
+
+      .summary {
+        .item {
+          .itemResult {
+            &.positive {
+              color: green;
+            }
+
+            &.negative {
+              color: red;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  // Media Query's
+
+  @include media('<LGtablet') {
+    .top {
+      .title {
+        font-size: 12px;
+      }
+    }
+
+    .bottom {
+      gap: 9px;
+      padding: 12px;
+
+      .featuredCircularChart {
+        width: 75px;
+        height: 75px;
+      }
+
+      .title {
+        font-size: 12px;
+      }
+
+      .amount {
+        font-size: 15px;
+      }
+
+      .description {
+        font-size: 9px;
+      }
+
+      .summary {
+        .itemResult {
+          margin: 6px;
+          font-size: 12px;
+        }
+      }
+    }
+  }
+
+  @include media('<tablet') {
+    height: auto;
+  }
+
+  @include media('<phone') {
+    min-width: auto;
+    padding: 12px;
+
+    .bottom {
+      padding: 0;
+      padding-top: 12px;
+
+      .featuredCircularChart {
+        width: 60px;
+        height: 60px;
+      }
+
+      .title {
+        font-size: 12px;
+      }
+
+      .amount {
+        font-size: 15px;
+      }
+
+      .description {
+        font-size: 9px;
+      }
+
+      .summary {
+        .itemResult {
+          margin: 9px;
+          font-size: 12px;
+        }
+      }
+    }
+  }
+
+  @include media('<fold') {
+    .bottom {
+      .summary {
+        flex-direction: column;
+        justify-content: center;
+      }
+    }
+  }
+}

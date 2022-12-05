@@ -1,0 +1,111 @@
+@use '../../../styles/abstracts' as *;
+
+.dataTable {
+  width: 100%;
+  height: auto;
+  -webkit-box-shadow: none !important;
+  box-shadow: none !important;
+
+  .listTable {
+    .tableHead {
+      font-weight: bold;
+    }
+
+    .tableCell {
+      .cellWrapper {
+        display: flex;
+        align-items: center;
+
+        .img {
+          width: 30px;
+          height: 30px;
+          border-radius: 50%;
+          margin-right: 12px;
+          object-fit: cover;
+        }
+      }
+
+      .status {
+        min-width: 60px;
+        max-width: 120px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 9px;
+        border-radius: 6px;
+
+        &.Aprovado {
+          color: green;
+          background-color: rgba(170, 255, 1);
+        }
+
+        &.Pendiente {
+          color: rgb(139, 64, 1);
+          background-color: rgba(255, 192, 0);
+        }
+      }
+
+      span {
+        font-weight: bold;
+      }
+    }
+  }
+
+  // Dark Mode
+
+  &.dark {
+    .tableHead {
+      color: $dark-third;
+    }
+
+    .tableCell {
+      color: $dark-typography-primary;
+    }
+  }
+
+  &.light {
+    .tableHead {
+      color: $typography-third;
+    }
+
+    .tableCell {
+      color: $typography-primary;
+    }
+  }
+
+  // Media Query's
+
+  @include media('<tablet') {
+    .tableHead {
+      font-size: 9px;
+    }
+
+    .listTable {
+      .tableCell {
+        font-size: 9px;
+
+        .cellWrapper {
+          .img {
+            width: 21px;
+            height: 21px;
+          }
+        }
+
+        .status {
+          width: 21px;
+          padding: 6px;
+        }
+      }
+    }
+  }
+
+  @include media('<phone') {
+    .listTable {
+      .cellWrapper {
+        .img {
+          display: none;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,190 @@
+@use '../../../styles/abstracts' as *;
+
+.main {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: row;
+
+  transition: $transitionsAll;
+
+  .sideContainer {
+    width: 240px;
+    height: 100%;
+
+    &.hide {
+      width: 81px;
+    }
+  }
+
+  .mainContainer {
+    width: calc(100% - 240px);
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+
+    .navContainer {
+      width: 100%;
+      height: 75px;
+    }
+
+    .content {
+      width: 100%;
+      height: calc(100% - 81px);
+      max-height: calc(100% - 81px);
+      overflow-y: scroll;
+
+      .widgets {
+        width: 100%;
+        height: 149px;
+        display: flex;
+        flex-wrap: wrap;
+        padding: $generalPadding;
+        gap: 21px;
+      }
+
+      .charts {
+        width: 100%;
+        height: 462px;
+        display: grid;
+        grid-template-columns: 1fr 2fr;
+        padding: $generalPadding;
+        gap: 21px;
+      }
+
+      .tableContainer {
+        width: 100%;
+        height: auto;
+        padding: $generalPadding;
+        margin-bottom: 9px;
+
+        .table {
+          -webkit-box-shadow: $boxShadowDark;
+          box-shadow: $boxShadowClear;
+          border-radius: $borderRadius;
+          padding: 21px;
+          overflow: scroll;
+
+          .tableTitle {
+            font-size: 15px;
+            font-weight: bold;
+            color: $typography-secondary;
+          }
+        }
+      }
+    }
+
+    .footer {
+      width: 100%;
+      height: 60px;
+    }
+  }
+
+  // Hide SideBar
+
+  &.hide {
+    .sideContainer {
+      width: 81px;
+    }
+
+    .mainContainer {
+      width: calc(100% - 81px);
+    }
+  }
+
+  // Media Query's
+
+  @include media('<desktop') {
+    .sideContainer {
+      width: 210px;
+    }
+
+    .mainContainer {
+      width: calc(100% - 210px);
+    }
+  }
+
+  @include media('<LGtablet') {
+    .mainContainer {
+      .content {
+        .widgets {
+          height: auto;
+          display: grid;
+          grid-template-columns: 1fr 1fr;
+          gap: 15px;
+        }
+
+        .charts {
+          height: 360px;
+          gap: 15px;
+        }
+      }
+    }
+  }
+
+  @include media('<tablet') {
+    .mainContainer {
+      .content {
+        .charts {
+          height: auto;
+          display: flex;
+          flex-direction: column;
+          gap: 15px;
+        }
+      }
+    }
+  }
+
+  @include media('<phone') {
+    .sideContainer {
+      width: 81px;
+    }
+
+    .mainContainer {
+      width: calc(100% - 81px);
+
+      .content {
+        .charts {
+          padding: $phonePadding;
+        }
+
+        .tableContainer {
+          .table {
+            width: 99%;
+          }
+        }
+
+        height: auto;
+        padding: $phonePadding;
+      }
+    }
+  }
+
+  @include media('<fold') {
+    .sideContainer {
+      width: 60px;
+    }
+
+    .mainContainer {
+      width: calc(100% - 60px);
+
+      .content {
+        .widgets {
+          display: grid;
+          grid-template-rows: 1fr 1fr 1fr 1fr;
+          grid-template-columns: 1fr;
+          gap: 6px;
+          padding: 6px;
+        }
+
+        .charts {
+          padding: 6px;
+        }
+
+        .tableContainer {
+          padding: 6px;
+        }
+      }
+    }
+  }
+}

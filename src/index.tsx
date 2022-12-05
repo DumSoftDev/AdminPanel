@@ -3,19 +3,17 @@ import ReactDOM from 'react-dom/client';
 import { Provider } from 'react-redux';
 import { store } from './store';
 
-import App from './App';
+import { AdminPanel } from './AdminPanel';
 
-import './scss/components/index.scss';
+import './index.scss';
 
 const root = ReactDOM.createRoot(
   document.getElementById('root') as Element,
 );
 root.render(
   <React.StrictMode>
-    {/* <ThemeProvider> */}
     <Provider store={store}>
-      <App />
+      <AdminPanel />
     </Provider>
-    {/* </ThemeProvider> */}
   </React.StrictMode>,
 );

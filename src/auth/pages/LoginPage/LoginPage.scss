@@ -1,0 +1,79 @@
+@use '../../../styles/abstracts' as *;
+
+.login-container {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  .row {
+    min-width: 81%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    border-radius: $borderRadius;
+    -webkit-box-shadow: $boxShadowDark;
+    box-shadow: $boxShadowClear;
+
+    h3 {
+      margin: 21px;
+      font-size: 24px;
+      font-weight: bold;
+    }
+
+    input {
+      width: 72%;
+      height: 30px;
+      font-size: 12px;
+      padding: 9px;
+      margin-bottom: 3px;
+      justify-content: center;
+    }
+
+    form {
+      margin-bottom: 42px;
+    }
+
+    .btnSubmit {
+      border: none;
+      font-weight: bold;
+      border-radius: 1.5rem;
+      margin-top: 12px;
+      padding: 9px;
+      cursor: pointer;
+
+      &:active {
+        transform: scale(1.02);
+        transition: $transitionsAll;
+      }
+    }
+
+    .login-form-1 {
+      flex: 1;
+      padding: 21px;
+
+      .btnSubmit {
+        color: white;
+        background-color: $secondary;
+      }
+    }
+
+    .login-form-2 {
+      flex: 1;
+      padding: 21px;
+      background-color: $secondary;
+
+      h3 {
+        color: white;
+      }
+
+      .btnSubmit {
+        color: $secondary;
+        background-color: white;
+      }
+    }
+  }
+}
