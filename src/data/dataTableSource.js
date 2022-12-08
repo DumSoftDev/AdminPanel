@@ -59,7 +59,7 @@ const links = [
     links: [
       {
         icon: <DeliveryDiningIcon className='icon' />,
-        name: 'Deliverys',
+        name: 'Deliveries',
       },
       {
         icon: <SportsMotorsportsIcon className='icon' />,

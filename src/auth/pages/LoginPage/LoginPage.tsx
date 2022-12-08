@@ -5,22 +5,33 @@ export const LoginPage = () => {
     <div className="login-container">
       <div className="row">
         <div className="login-form-1">
-          <h3>Ingreso</h3>
+          <h3>Login</h3>
+
+          <p>
+            Welcome to the private area. Please, provide login
+            credentials to proceed and have access to all our services
+          </p>
+
           <form>
             <div className="form-group">
               <input
                 type="text"
                 className="form-control"
-                placeholder="Correo"
+                placeholder="Usuario o Correo"
               />
             </div>
             <div className="form-group">
               <input
                 type="password"
                 className="form-control"
-                placeholder="Contraseña"
+                placeholder="Password"
               />
             </div>
+
+            <a href="#" className="forgot">
+              <span className="little-title">Forgot Password?</span>
+            </a>
+
             <div className="form-control">
               <input
                 type="submit"
@@ -28,10 +39,14 @@ export const LoginPage = () => {
                 value="Login"
               />
             </div>
+
+            <span className="little-title">
+              Don't have account yet?
+            </span>
           </form>
         </div>
 
-        <div className="login-form-2">
+        {/* <div className="login-form-2">
           <h3>Registro</h3>
           <form>
             <div className="form-group">
@@ -72,7 +87,7 @@ export const LoginPage = () => {
               />
             </div>
           </form>
-        </div>
+        </div> */}
       </div>
     </div>
   );

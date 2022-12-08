@@ -10,8 +10,7 @@ import {
   WbSunny,
 } from '@mui/icons-material';
 
-import { sideBarMode } from '../../../store/slices/sideBarSlice';
-import { themeMode } from '../../../store/slices/themeSlice';
+import { sideBarMode, themeMode } from '../../../store/slices';
 
 import './NavBar.scss';
 

@@ -11,7 +11,7 @@ export const Footer = () => {
         Copyright © 2022 - 2023 Algusal International LLC. All Rights
         Reserved.
       </h5>
-      <p>Design by JMunoz, DRamirez & ALegarreta.</p>
+      <p>Design by JMunoz.</p>
     </div>
   );
 };

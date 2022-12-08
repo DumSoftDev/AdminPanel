@@ -1,9 +1,11 @@
 import { Navigate, Route, Routes } from 'react-router-dom';
+import { useSelector } from 'react-redux';
+
 import { LoginPage } from '../auth';
 import { MainPage } from '../panel/pages';
 
 export const AppRouter = () => {
-  const authStatus: string = 'authenticated'; // authenticated || not-authenticated
+  const { authStatus } = useSelector((state: any) => state.login);
 
   return (
     <Routes>
