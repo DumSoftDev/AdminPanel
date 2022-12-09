@@ -10,7 +10,7 @@ import TableRow from '@mui/material/TableRow';
 import {
   columns,
   rows,
-} from '../../../data/components/ListTable/data';
+} from '../../../data';
 
 import './ListTable.scss';
 

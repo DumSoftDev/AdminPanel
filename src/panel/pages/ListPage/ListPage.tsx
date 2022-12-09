@@ -1,6 +1,4 @@
-import AddIcon from '@mui/icons-material/Add';
-
-import { DataTable, NavBar, SideBar } from '../../components';
+import { employees, users } from '../../../data';
 
 import './ListPage.scss';
 
@@ -9,26 +7,25 @@ type Props = {
 };
 
 export const ListPage = ({ type }: Props) => {
+  let data: object = [];
+
+  console.log(type);
+
+  switch (type) {
+    case 'Employees':
+      data = employees;
+      break;
+
+    case 'Users':
+      data = users;
+      break;
+  }
+
+  console.log(users[0]);
+
   return (
     <div className="listPage">
       <h1>{`List Page - ${type}`}</h1>
-      {/* <SideBar />
-
-      <div className="listContainer">
-        <NavBar />
-
-        <div className="newItem">
-          <h1 className="title">Usuarios</h1>
-          <div className="newButton">
-            <AddIcon className="icon" />
-            <span>Nuevo Usuario</span>
-          </div>
-        </div>
-
-        <div className="listDataTableContainer">
-          <DataTable />
-        </div>
-      </div> */}
     </div>
   );
 };
